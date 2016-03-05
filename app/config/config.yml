@@ -70,3 +70,12 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: UserBundle\Entity\User
+
+fos_oauth_server:
+    db_driver: orm       # Driver availables: orm, mongodb, or propel
+    client_class:        OAuthServerBundle\Entity\Client
+    access_token_class:  OAuthServerBundle\Entity\AccessToken
+    refresh_token_class: OAuthServerBundle\Entity\RefreshToken
+    auth_code_class:     OAuthServerBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_provider.username
